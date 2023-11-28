@@ -35,3 +35,15 @@ jobs:
       - run: flutter pub get
 
       - run: flutter build ${{ matrix.target }}
+
+      - name: Upload artifact(Android)
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-debug.apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
+          
+      - name: Upload artifact(iOS)
+        uses: actions/upload-artifact@v3
+        with:
+          name: Runner.app
+          path: build/ios/iphoneos/Runner.app
