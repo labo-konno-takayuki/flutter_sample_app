@@ -1,4 +1,4 @@
-name: Builds
+name: Test
 on:
   push:
     branches:
@@ -10,7 +10,7 @@ permissions: read-all
 
 jobs:
   build:
-    name: Build ${{ matrix.target }}
+    name: Test Flutter Project
     runs-on: macos-latest
     strategy:
       fail-fast: false
